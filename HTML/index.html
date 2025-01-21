@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudantes de LCC3T</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+
+<body style="font-family: Arial, sans-serif;">
+    <div class="prin">
+
+        <div class="container" id="wave-effect">
+
+               
+                <!-- Lado esquerdo com o formulário e logotipo -->
+                <div class="left-side">
+                    <!-- Logotipo no topo -->
+                    <div class="logo-container">
+                        <img src="/IMG/logotipo.png" alt="Logo_do_Imetro" class="logo"
+                            style="padding-bottom: 20%;width:100px;">
+                    </div>
+
+                    <form id="studentForm">
+                        <div class="titulo">
+
+                            <h2 style="font-size: 150%;"> LCC3T DA IMETRO</h2><br>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nome do Estudante</label>
+                            <input type="text" id="name" placeholder="Nome do estudante" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="matricula">Número de Matrícula</label>
+                            <input type="text" id="matricula" placeholder="Número de matrícula" oninput=autoFillName()>
+                        </div>
+                        <div class="notas">
+                            <div class="form-group-item">
+                                <label for="nota1">1ª Nota</label>
+                                <input type="number" id="nota1" min="0" max="22" required>
+                            </div>
+                            <div class="form-group-item">
+                                <label for="nota2">2ª Nota</label>
+                                <input type="number" id="nota2" min="0" max="20" required>
+                            </div>
+                            <div class="form-group-item">
+                                <label for="nota3">3ª Nota</label>
+                                <input type="number" id="nota3" min="0" max="20" required>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="button" onclick="assignGrades()">Atribuir</button>
+                            <button type="button" onclick="clearForm()">Limpar</button>
+                            <button type="button" onclick="saveGrades()" id="saveButton">Guardar</button>
+                            <button type="button" onclick="viewGrades()">Consultar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Lado direito com a imagem gif -->
+                <div class="right-side"> 
+                    <button id="alter-side-btn" onclick="mudarLados()">Cnahge side</button>   
+                    <img src="http://www.imetroangola.com/img/3.jpeg" alt="Imagem Animada" id="right-background-image">
+                </div>
+        </div>
+
+        <!-- Hora do sistema -->
+        <div id="systemTime" style="text-align: center; padding: 10px; background-color: #f4f4f4;"></div>
+    </div>
+
+    <!-- Janela popup para exibir as notas -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h3>Notas dos Estudantes</h3>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Nota 1</th>
+                        <th>Nota 2</th>
+                        <th>Nota 3</th>
+                        <th>Média</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; LCC3M Angola 2024
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

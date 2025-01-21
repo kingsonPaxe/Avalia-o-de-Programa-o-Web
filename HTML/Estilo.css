@@ -1,0 +1,258 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+.titulo{
+    text-align: center;
+}
+
+.notas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+/* Lado esquerdo (formulário) */
+.left-side {
+    width: 475px; /* Largura aproximada de um iPhone 15 */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    background-color: #f4f4f4;
+    
+}
+
+.left-side-swapp{
+    width: 475px; /* Largura aproximada de um iPhone 15 */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d3d3d;
+    color: white;
+}
+
+/* Formulário */
+form {
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Input de texto */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 9px;
+    border: 1px solid #ccc;
+}
+
+/* Estilização dos botões */
+.buttons {
+    display: flex;
+    justify-content: space-between; /* Para separar os botões uniformemente */
+    gap: 10px; /* Espaçamento entre os botões */
+    width: 100%;
+}
+
+.buttons button {
+    flex: 1; /* Cada botão ocupará o mesmo espaço */
+    padding: 10px 0; /* Alinhamento vertical */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffe100;
+}
+
+
+.float-button button{
+    
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ffe100;
+}
+
+.float-button{
+    position: relative;
+    left: 90%;
+    top: 70px;
+}
+
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: #e7cc00;
+    color: white;
+}
+
+#data-table th {
+    padding: 16px;
+}
+
+#data-table td {
+    padding-bottom: 10px;
+}
+/* Lado direito (imagem) */
+.right-side {
+    flex-grow: 1;
+    background-color: #222;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    position: relative;
+}
+
+#alter-side-btn {
+    position: absolute;
+    margin: 24px;
+    top: 10px;
+    width: 150px;
+    height: 50px;
+    flex: 1; /* Cada botão ocupará o mesmo espaço */
+    padding: 10px 0; /* Alinhamento vertical */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffe100;
+}
+
+.right-side #right-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.308);
+}
+
+.popup-content {
+    background-color: rgba(255, 254, 254, 0.55);
+    padding: 40px; /* Reduzido para melhor ajuste */
+    border-radius: 20px;
+    text-align: center;
+}
+
+.popup-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: #222;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    footer
+    .left-side,
+    .right-side {
+        width: 100%;
+        height: auto;
+    }
+    .buttons {
+        flex-direction: column; /* Para empilhar botões verticalmente em telas menores */
+    }
+}
+
+/* Efeito de Ondas */
+.wave {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    animation: ripple 0.6s linear;
+}
+
+.rodape{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    background-color: #f4f4f4;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.link{
+    text-align: center;
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(15);
+        opacity: 0;
+    }
+}
+
+/* Ocultar o botão "Guardar" */
+#saveButton {
+    display: none;
+}
+
+/* Outros estilos seguem o já implementado anteriormente */
+
+ /* Flexbox inverte os lados */
+.container.swapped {
+    flex-direction: row-reverse;
+}
+
+      
+
