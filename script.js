@@ -1,10 +1,10 @@
 
 // Lista de matrículas e nomes
 const studentNames = [
-    { id: "1", name: "Pedro Manuel" },
-    { id: "2", name: "Adão Carlos" },
-    { id: "3", name: "Suzana Neto" },
-    { id: "4", name: "Julieta Domingos" }
+    { id: "1", name: "Jeovani Paxe" },
+    { id: "2", name: "Pedro dos Santos" },
+    { id: "3", name: "Edgar Baptista" },
+    { id: "4", name: "Maria Paxe" }
 ];
 
 let students = [];
@@ -112,10 +112,16 @@ function closePopup() {
 
 // Atualizar a hora do sistema
 function updateSystemTime() {
-    const timeElement = document.getElementById("systemTime");
-    const now = new Date();
-    const timeString = now.toLocaleTimeString("pt-PT", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-    timeElement.innerHTML = `<strong>Hora do Sistema:</strong> ${timeString}`;
+    const relogio = document.getElementById('relogio');
+    const actual = new Date();
+
+    // Formata a hora
+    const horas = actual.getHours().toString().padStart(2, '0');
+    const minutos = actual.getMinutes().toString().padStart(2, '0');
+    const segundos = actual.getSeconds().toString().padStart(2, '0');
+
+    // Atualiza o conteúdo do elemento
+    relogio.textContent = `${horas}:${minutos}:${segundos}`;
 }
 
 // Alterar os lados
@@ -123,6 +129,7 @@ function mudarLados(){
     const container = document.querySelector(".container");
     const leftSide = container.querySelector(".left-side");
     const rightSide = container.querySelector(".right-side");
+    const relogio = container.querySelector("#relogio")
 
     // Verificar a ordem atual e alternar
     if (leftSide.nextElementSibling === rightSide) {

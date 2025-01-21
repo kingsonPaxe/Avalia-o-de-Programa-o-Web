@@ -85,6 +85,17 @@ input[type="text"] {
     background-color: #ffe100;
 }
 
+#relogio {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(247, 218, 30);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
 
 .float-button button{
     
@@ -137,6 +148,8 @@ button:hover {
     border-radius: 5px;
     cursor: pointer;
     background-color: #ffe100;
+    font-size: 12pt;
+    font-weight: bold;
 }
 
 .right-side #right-background-image {
@@ -253,6 +266,3 @@ footer {
 .container.swapped {
     flex-direction: row-reverse;
 }
-
-      
-
